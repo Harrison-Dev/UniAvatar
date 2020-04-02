@@ -10,6 +10,8 @@ An open source text adventure game (ADV) sample based UniRx for Unity.
 
 ### [unity-text-typer](https://github.com/redbluegames/unity-text-typer)
 
+### Text Mesh Pro
+
 ## License
 
 MIT License
