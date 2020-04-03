@@ -1,0 +1,3 @@
+[submodule "Assets/Plugins/Utopia"]
+	path = Assets/Plugins/Utopia
+	url = git@github.com:Harrison-Dev/Utopia.git
