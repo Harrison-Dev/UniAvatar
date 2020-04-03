@@ -1,6 +1,6 @@
 # UniAvatar
 
-An open source text adventure game (ADV) sample based UniRx for Unity.
+An open source text adventure game (ADV) sample for Unity Engine.
 
 ## Related Projects
 
