@@ -43,7 +43,7 @@ namespace UniAvatar
             }
             else
             {
-                
+                GameStoryManager.Instance.Play();
             }
         }
     }

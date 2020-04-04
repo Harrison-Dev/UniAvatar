@@ -14,15 +14,20 @@ namespace UniAvatar
 
         private Dictionary<string, WordData> m_wordSettingMap;
 
+        private void Awake()
+        {
+            Init();
+        }
+
         private void Init()
         {
-            m_wordSettingMap = WordSetting.WordSheet.ToDictionary(x =>x.PrimaryKey);
+            m_wordSettingMap = WordSetting.WordSheet.ToDictionary(x => x.PrimaryKey);
         }
 
         public string GetSWordByKey(string key)
         {
             return m_wordSettingMap[key].Contents[CurrentLanaguage];
         }
-        
+
     }
 }

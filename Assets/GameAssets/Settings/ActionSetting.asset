@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7e28f0b70885540bbaf407d093d1ed, type: 3}
   m_Name: ActionSetting
   m_EditorClassIdentifier: 
-  ActionsheetCSV: {fileID: 0}
-  ActionDatas: []
+  ActionsheetCSV: {fileID: 4900000, guid: d6020a3e8fd36da4882713bf1cff1d12, type: 3}
+  ActionDatas:
+  - Step: 1
+    Type: Talk
+    Arg1: Yuzui_Name
+    Arg2: hello
+    Arg3: 
+    Arg4: 
+  - Step: 2
+    Type: Talk
+    Arg1: Aki_Name
+    Arg2: talk_breakfast
+    Arg3: 
+    Arg4: 
