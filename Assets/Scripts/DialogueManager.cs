@@ -20,6 +20,11 @@ namespace UniAvatar
 
         [SerializeField] private AudioClip m_printSound;
 
+        public bool IsTyping
+        {
+            get => m_textController.IsTyping;
+        }
+
 
         private void Start()
         {
@@ -44,16 +49,9 @@ namespace UniAvatar
             m_dialogueLines.Enqueue(word);
         }
 
-        public void HandleNextClick()
+        public void SkipCurrent()
         {
-            if (m_textController.IsSkippable() && m_textController.IsTyping)
-            {
-                m_textController.Skip();
-            }
-            else
-            {
-                GoNextWord();
-            }
+            m_textController.Skip();
         }
 
         private void GoNextWord()

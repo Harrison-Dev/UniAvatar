@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace UniAvatar
 {
-    public interface IAction
+    public class GameStoryManager : MonoSingleton<GameStoryManager>
     {
-        void Execute(string arg1, string arg2, string arg3, string arg4);
+        public List<ActionData> Actions;
     }
 }

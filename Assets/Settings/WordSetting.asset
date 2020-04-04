@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8e9ba635b981642bf7f49df29fcdae, type: 3}
+  m_Name: WordSetting
+  m_EditorClassIdentifier: 
+  DataCSV: {fileID: 4900000, guid: 2fcafd3b1ceec0d4eb80a26954b9e2cd, type: 3}
+  WordSheet:
+  - PrimaryKey: Yuzui_Name
+    Contents:
+    - "\u904A\u7A57"
+    - Yu-Zui
+    - "\u3086\u305A\u3043\r"
+  - PrimaryKey: Aki_Name
+    Contents:
+    - "\u5F69\u5E0C"
+    - Aki
+    - "\u3042\u304D\r"
+  - PrimaryKey: hello
+    Contents:
+    - "\u65E9\u5B89"
+    - good Morning
+    - "\u304A\u306F\u3088\u3046\u3054\u3056\u3044\u307E\u3059\r"
+  - PrimaryKey: talk_breakfast
+    Contents:
+    - "\u65E9\u5B89\uFF0C\u4F60\u5403\u65E9\u9910\u4E86\u55CE\uFF1F"
+    - Good morning, you eat breakfast yet?
+    - "\u304A\u306F\u3088\u3046\u3001\u3042\u306A\u305F\u306F\u307E\u3060\u671D\u98DF\u3092\u98DF\u3079\u307E\u3059\u304B\uFF1F\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - "#VALUE!\r"
+  - PrimaryKey: 
+    Contents:
+    - 
+    - '#VALUE!'
+    - '#VALUE!'

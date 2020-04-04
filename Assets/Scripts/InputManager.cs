@@ -31,7 +31,20 @@ namespace UniAvatar
             Observable
                 .Merge(btnStream, keyStream)
                 .ThrottleFirst(System.TimeSpan.FromSeconds(m_clickColddown))
-                .Subscribe(_ => DialogueManager.Instance.HandleNextClick());
+                .Subscribe(_ => HandleClick());
+        }
+
+        protected void HandleClick()
+        {
+            var dialogue = DialogueManager.Instance;
+            if(dialogue.IsTyping)
+            {
+                dialogue.SkipCurrent();
+            }
+            else
+            {
+                
+            }
         }
     }
 }
