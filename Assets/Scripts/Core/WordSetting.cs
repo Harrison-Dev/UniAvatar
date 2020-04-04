@@ -36,7 +36,8 @@ namespace UniAvatar
                 {
                     data.Contents[j - 1] = grid[j, i];
                 }
-                WordSheet.Add(data);
+                if(!string.IsNullOrEmpty(data.PrimaryKey))
+                    WordSheet.Add(data);
             }
 
             GC.Collect();
