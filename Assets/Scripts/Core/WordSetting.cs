@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utopia;
 
 namespace UniAvatar
 {
@@ -15,16 +16,24 @@ namespace UniAvatar
     [CreateAssetMenu(fileName = "WordSetting", menuName = "UniAvatar/WordSetting")]
     public class WordSetting : ScriptableObject
     {
-        public TextAsset DataCSV;
+        [Header("Word Settings")]
+        public TextAsset WordsheetCSV;
         public List<WordData> WordSheet = new List<WordData>();
+        public List<string> Languages;
 
-        public void ConvertCSV()
+        public void SetUpWord()
         {
-            string dataStr = DataCSV.text;
+            string dataStr = WordsheetCSV.text;
 
             var grid = CSVReader.SplitCsvGrid(dataStr);
 
             WordSheet = new List<WordData>();
+
+            // Get Languages
+            for (var i = 1; i < grid.GetLength(0); i++)
+            {
+                Languages.Add(grid[i, 0]);
+            }
 
             for (var i = 1; i < grid.GetLength(1); i++)
             {
@@ -36,7 +45,7 @@ namespace UniAvatar
                 {
                     data.Contents[j - 1] = grid[j, i];
                 }
-                if(!string.IsNullOrEmpty(data.PrimaryKey))
+                if (!string.IsNullOrEmpty(data.PrimaryKey))
                     WordSheet.Add(data);
             }
 

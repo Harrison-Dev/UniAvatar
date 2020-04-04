@@ -6,6 +6,6 @@ namespace UniAvatar
 {
     public class GameStoryManager : MonoSingleton<GameStoryManager>
     {
-        public List<ActionData> Actions;
+        public ActionSetting ActionSetting;
     }
 }

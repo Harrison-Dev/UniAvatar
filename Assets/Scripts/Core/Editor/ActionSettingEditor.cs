@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEditor;
 using UniAvatar;
 
-[CustomEditor(typeof(WordSetting))]
-public class WordSettingEditor : Editor
+[CustomEditor(typeof(ActionSetting))]
+public class ActionSettingEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        bool clickBtn = GUILayout.Button("Setup Word Setting");
+        bool clickBtn = GUILayout.Button("Setup Action Setting");
         if (clickBtn)
         {
-            var wordSetting = (WordSetting)target;
-            wordSetting.SetUpWord();
+            var wordSetting = (ActionSetting)target;
+            wordSetting.SetUpActions();
         }
 
         base.OnInspectorGUI();
