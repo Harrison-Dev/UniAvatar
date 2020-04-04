@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WordSetting
   m_EditorClassIdentifier: 
   WordsheetCSV: {fileID: 4900000, guid: 2fcafd3b1ceec0d4eb80a26954b9e2cd, type: 3}
+  FontAsset: {fileID: 11400000, guid: 40e822cc9f947094289bf1bb92210177, type: 2}
   WordSheet:
   - PrimaryKey: Yuzui_Name
     Contents:
@@ -34,6 +35,16 @@ MonoBehaviour:
     - "\u65E9\u5B89\uFF0C\u4F60\u5403\u65E9\u9910\u4E86\u55CE\uFF1F"
     - Good morning, you eat breakfast yet?
     - "\u304A\u306F\u3088\u3046\u3001\u3042\u306A\u305F\u306F\u307E\u3060\u671D\u98DF\u3092\u98DF\u3079\u307E\u3059\u304B\uFF1F\r"
+  - PrimaryKey: not_yet
+    Contents:
+    - "\u9084\u6C92\u8036\uFF0C\u4F60\u5462\uFF1F"
+    - No yeah, How about you?
+    - "\u3048\u3048\u3044\u3044\u3048\u3001\u3042\u306A\u305F\u306F\u3069\u3046\uFF1F\r"
+  - PrimaryKey: no_more
+    Contents:
+    - "\u6211\u4E0D\u5403\u65E9\u9910\u8D85hip-hop"
+    - I do not eat breakfast super hip-hop
+    - "\u79C1\u306F\u671D\u98DF\u306E\u30B9\u30FC\u30D1\u30FC\u30D2\u30C3\u30D7\u30DB\u30C3\u30D7\u3092\u98DF\u3079\u3066\u3044\u307E\u305B\u3093\r"
   Languages:
   - zh-tw
   - en

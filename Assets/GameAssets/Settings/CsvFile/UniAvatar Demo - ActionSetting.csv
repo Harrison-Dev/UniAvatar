@@ -1,8 +1,8 @@
-Step,Action,Arg1,Arg2,Arg3,Arg4,Comment
-1,Talk,Yuzui_Name,hello,,,說早安啦
-2,Talk,Aki_Name,talk_breakfast,,,
-3,,,,,,
-4,,,,,,
+Step,Action,Arg1,Arg2,Arg3,Arg4,Content
+1,Talk,遊穗,早安,,,
+2,Talk,彩希,早安，你吃早餐了嗎？,,,
+3,Talk,遊穗,我不吃早餐,,,
+4,Talk,彩希,這樣很不健康喔,,,
 5,,,,,,
 6,,,,,,
 7,,,,,,

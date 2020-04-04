@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Utopia;
+using TMPro;
 
 namespace UniAvatar
 {
@@ -28,7 +29,8 @@ namespace UniAvatar
             var grid = CSVReader.SplitCsvGrid(dataStr);
 
             WordSheet = new List<WordData>();
-
+            Languages = new List<string>();
+            
             // Get Languages
             for (var i = 1; i < grid.GetLength(0); i++)
             {
