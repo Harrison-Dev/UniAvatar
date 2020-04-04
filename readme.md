@@ -1,6 +1,6 @@
 # UniAvatar
 
-An open source text adventure game (ADV) sample for Unity Engine.
+An open source dialogue system for Unity Engine with a simple text adventure game (ADV) sample.
 
 ## License
 
