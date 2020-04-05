@@ -13,38 +13,37 @@ MonoBehaviour:
   m_Name: WordSetting
   m_EditorClassIdentifier: 
   WordsheetCSV: {fileID: 4900000, guid: 2fcafd3b1ceec0d4eb80a26954b9e2cd, type: 3}
-  FontAsset: {fileID: 11400000, guid: 40e822cc9f947094289bf1bb92210177, type: 2}
   WordSheet:
-  - PrimaryKey: Yuzui_Name
+  - PrimaryKey: "\u904A\u7A57"
     Contents:
     - "\u904A\u7A57"
     - Yu-Zui
     - "\u3086\u305A\u3043\r"
-  - PrimaryKey: Aki_Name
+  - PrimaryKey: "\u5F69\u5E0C"
     Contents:
     - "\u5F69\u5E0C"
     - Aki
     - "\u3042\u304D\r"
-  - PrimaryKey: hello
+  - PrimaryKey: "\u65E9\u5B89"
     Contents:
     - "\u65E9\u5B89"
     - good Morning
     - "\u304A\u306F\u3088\u3046\u3054\u3056\u3044\u307E\u3059\r"
-  - PrimaryKey: talk_breakfast
+  - PrimaryKey: "\u65E9\u5B89\uFF0C\u4F60\u5403\u65E9\u9910\u4E86\u55CE\uFF1F"
     Contents:
     - "\u65E9\u5B89\uFF0C\u4F60\u5403\u65E9\u9910\u4E86\u55CE\uFF1F"
     - Good morning, you eat breakfast yet?
     - "\u304A\u306F\u3088\u3046\u3001\u3042\u306A\u305F\u306F\u307E\u3060\u671D\u98DF\u3092\u98DF\u3079\u307E\u3059\u304B\uFF1F\r"
-  - PrimaryKey: not_yet
+  - PrimaryKey: "\u6211\u4E0D\u5403\u65E9\u9910"
     Contents:
-    - "\u9084\u6C92\u8036\uFF0C\u4F60\u5462\uFF1F"
-    - No yeah, How about you?
-    - "\u3048\u3048\u3044\u3044\u3048\u3001\u3042\u306A\u305F\u306F\u3069\u3046\uFF1F\r"
-  - PrimaryKey: no_more
+    - "\u6211\u4E0D\u5403\u65E9\u9910"
+    - I do not eat breakfast
+    - "\u79C1\u306F\u671D\u98DF\u3092\u98DF\u3079\u3066\u3044\u307E\u305B\u3093\r"
+  - PrimaryKey: "\u9019\u6A23\u5F88\u4E0D\u5065\u5EB7\u5594"
     Contents:
-    - "\u6211\u4E0D\u5403\u65E9\u9910\u8D85hip-hop"
-    - I do not eat breakfast super hip-hop
-    - "\u79C1\u306F\u671D\u98DF\u306E\u30B9\u30FC\u30D1\u30FC\u30D2\u30C3\u30D7\u30DB\u30C3\u30D7\u3092\u98DF\u3079\u3066\u3044\u307E\u305B\u3093\r"
+    - "\u9019\u6A23\u5C0D\u8EAB\u9AD4\u4E0D\u597D\u5594"
+    - Oh so bad for your health
+    - "\u3042\u306A\u305F\u306E\u5065\u5EB7\u306E\u305F\u3081\u306B\u3042\u3042\u305D\u3046\u60AA\u3044\u3067\u3059\r"
   Languages:
   - zh-tw
   - en

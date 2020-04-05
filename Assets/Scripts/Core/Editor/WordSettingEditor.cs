@@ -14,6 +14,8 @@ public class WordSettingEditor : Editor
         {
             var wordSetting = (WordSetting)target;
             wordSetting.SetUpWord();
+            EditorUtility.SetDirty(wordSetting);
+            AssetDatabase.SaveAssets();
         }
 
         base.OnInspectorGUI();

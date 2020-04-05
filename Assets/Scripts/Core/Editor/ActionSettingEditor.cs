@@ -12,8 +12,10 @@ public class ActionSettingEditor : Editor
         bool clickBtn = GUILayout.Button("Setup Action Setting");
         if (clickBtn)
         {
-            var wordSetting = (ActionSetting)target;
-            wordSetting.SetUpActions();
+            var actionSetting = (ActionSetting)target;
+            actionSetting.SetUpActions();
+            EditorUtility.SetDirty(actionSetting);
+            AssetDatabase.SaveAssets();
         }
 
         base.OnInspectorGUI();

@@ -11,7 +11,17 @@ namespace UniAvatar
         private AudioSource m_soundEffectSource;
         private AudioSource m_bgmSource;
 
+        private void Awake()
+        {
+            Init();
+        }
+
         private void Start()
+        {
+
+        }
+
+        private void Init()
         {
             var seObj = new GameObject();
             seObj.transform.SetParent(this.transform);
