@@ -30,7 +30,14 @@ namespace UniAvatar
 
         public void Play()
         {
+            if(m_actionPtr >= ActionSetting.ActionDatas.Count)
+            {
+                Debug.Log("Reach last action.");
+                return;
+            }
+
             var actionData = ActionSetting.ActionDatas[m_actionPtr++];
+            
             if (string.IsNullOrEmpty(actionData.Type))
                 return;
 
