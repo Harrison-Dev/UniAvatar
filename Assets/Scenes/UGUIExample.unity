@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WordSetting: {fileID: 11400000, guid: 02b67e725f67c254ea05bf172c93920f, type: 2}
-  CurrentLanaguage: 2
+  CurrentLanaguage: 0
 --- !u!1 &129788440
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 129788441}
+  - component: {fileID: 129788442}
   m_Layer: 5
   m_Name: Character Right
   m_TagString: Untagged
@@ -424,6 +425,19 @@ RectTransform:
   m_AnchoredPosition: {x: 261, y: -13}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &129788442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129788440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6adf6ec028ee974aa609c41c63f7f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: "\u904A\u7A57"
 --- !u!1 &249567910
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +450,7 @@ GameObject:
   - component: {fileID: 249567913}
   - component: {fileID: 249567912}
   m_Layer: 5
-  m_Name: Designer
+  m_Name: Yuzui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1682,6 +1696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1231091999}
+  - component: {fileID: 1231092000}
   m_Layer: 5
   m_Name: Character Left
   m_TagString: Untagged
@@ -1709,6 +1724,19 @@ RectTransform:
   m_AnchoredPosition: {x: -261, y: -13.000004}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1231092000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231091998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6adf6ec028ee974aa609c41c63f7f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: "\u5F69\u5E0C"
 --- !u!1 &1285027939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,7 +1908,7 @@ GameObject:
   - component: {fileID: 1293178621}
   - component: {fileID: 1293178620}
   m_Layer: 5
-  m_Name: 'Art '
+  m_Name: Aki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2123,6 +2151,7 @@ RectTransform:
   - {fileID: 437336410}
   - {fileID: 1731423551}
   - {fileID: 37042725}
+  - {fileID: 1459744755}
   m_Father: {fileID: 1934957189}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2131,6 +2160,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1459744754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1459744755}
+  - component: {fileID: 1459744756}
+  m_Layer: 5
+  m_Name: Animation Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1459744755
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459744754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1412397629}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1459744756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459744754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0861fcb9969aa4e828bb69e095ab02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1531132401
 GameObject:
   m_ObjectHideFlags: 0

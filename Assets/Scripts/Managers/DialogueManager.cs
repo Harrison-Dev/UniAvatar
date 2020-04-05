@@ -40,7 +40,7 @@ namespace UniAvatar
 
         private void Init()
         {
-            
+
         }
 
         public void EnqueueWord(string word)
@@ -66,6 +66,19 @@ namespace UniAvatar
         {
             m_nameBox.SetName(name);
             m_textController.TypeText(content);
+
+            // Say Animation (Temp)
+            foreach (var nameInList in GameStoryManager.Instance.m_nameList)
+            {
+                if (string.Equals(nameInList, name))
+                {
+                    AnimationManager.Instance.PlayAnim(nameInList, "CharacterFadeIn");
+                }
+                else
+                {
+                    AnimationManager.Instance.PlayAnim(nameInList, "CharacterFadeOut");
+                }
+            }
         }
 
     }

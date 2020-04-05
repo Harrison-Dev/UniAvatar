@@ -13,6 +13,8 @@ namespace UniAvatar
         private Dictionary<string, IAction> m_actionMap = new Dictionary<string, IAction>();
         private int m_actionPtr = 0;
 
+        public HashSet<string> m_nameList = new HashSet<string>();
+
         private void Awake()
         {
             Init();
@@ -26,18 +28,27 @@ namespace UniAvatar
         private void Init()
         {
             m_actionMap.Add("Talk", new Talk());
+            m_actionMap.Add("Animate", new Animate());
+
+            foreach(var action in ActionSetting.ActionDatas)
+            {
+                if(action.Type == "Talk")
+                {
+                    m_nameList.Add(action.Arg1);
+                }
+            }
         }
 
         public void Play()
         {
-            if(m_actionPtr >= ActionSetting.ActionDatas.Count)
+            if (m_actionPtr >= ActionSetting.ActionDatas.Count)
             {
                 Debug.Log("Reach last action.");
                 return;
             }
 
             var actionData = ActionSetting.ActionDatas[m_actionPtr++];
-            
+
             if (string.IsNullOrEmpty(actionData.Type))
                 return;
 

@@ -7,9 +7,9 @@ namespace UniAvatar
 {
     public class AudioManager : MonoSingleton<AudioManager>
     {
-        [SerializeField] private AudioClip m_defaultBGM;
-        private AudioSource m_soundEffectSource;
-        private AudioSource m_bgmSource;
+        [SerializeField] private AudioClip m_defaultBGM = null;
+        private AudioSource m_soundEffectSource = null;
+        private AudioSource m_bgmSource = null;
 
         private void Awake()
         {
