@@ -36,13 +36,13 @@ namespace UniAvatar
         }
 
         // TODO : interrput
-
         public void PlayAnim(string targetKey, string functionKey)
         {
             var target = m_animationTargetMap[targetKey];
             var function = m_animationFunctionMap[functionKey];
 
-            function.Play(target);
+            var functionInstnace = function.CreateInstance();
+            functionInstnace.Play(target);
         }
 
     }
