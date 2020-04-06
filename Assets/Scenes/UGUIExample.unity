@@ -2208,6 +2208,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0861fcb9969aa4e828bb69e095ab02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimationFunctionSetting:
+  - Key: CharacterFadeIn
+    AnimationFunction: {fileID: 11400000, guid: 5c590f861b859ec49a002e8c66729bee,
+      type: 2}
+  - Key: CharacterFadeOut
+    AnimationFunction: {fileID: 11400000, guid: 3ab2a13cf186cc549bb631fef6bba9a4,
+      type: 2}
 --- !u!1 &1531132401
 GameObject:
   m_ObjectHideFlags: 0

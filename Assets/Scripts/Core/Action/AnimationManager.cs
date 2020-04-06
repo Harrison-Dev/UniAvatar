@@ -1,13 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace UniAvatar
 {
+    [System.Serializable]
+    public class AnimationFunctionPair
+    {
+        public string Key;
+        public AnimationFunctionBase AnimationFunction;
+    }
+    
     public class AnimationManager : MonoSingleton<AnimationManager>
     {
+        public AnimationFunctionPair[] AnimationFunctionSetting;
+
         private Dictionary<string, AnimationTargetBase> m_animationTargetMap = new Dictionary<string, AnimationTargetBase>();
-        private Dictionary<string, IAnimateFunction> m_animationFunctionMap = new Dictionary<string, IAnimateFunction>();
+        private Dictionary<string, AnimationFunctionBase> m_animationFunctionMap = new Dictionary<string, AnimationFunctionBase>();
 
         private void Awake()
         {
@@ -16,8 +27,7 @@ namespace UniAvatar
 
         private void Init()
         {
-            m_animationFunctionMap.Add("CharacterFadeIn", new CharacterFadeIn());
-            m_animationFunctionMap.Add("CharacterFadeOut", new CharacterFadeOut());
+            m_animationFunctionMap = AnimationFunctionSetting.ToDictionary(key => key.Key, value => value.AnimationFunction);
         }
 
         public void Register(string key, AnimationTargetBase animatedTarget)
@@ -32,9 +42,7 @@ namespace UniAvatar
             var target = m_animationTargetMap[targetKey];
             var function = m_animationFunctionMap[functionKey];
 
-            var functionInstance = function.CreateInstance();
-
-            functionInstance.Play(target);
+            function.Play(target);
         }
 
     }

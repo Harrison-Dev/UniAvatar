@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,41 +26,37 @@ namespace UniAvatar
         }
     }
 
-    public interface IAnimateFunction
+    public abstract class AnimationFunctionBase : ScriptableObject
     {
-        void Play(AnimationTargetBase target);
-        void Interrupt();
-        IAnimateFunction CreateInstance();
+        public abstract void Interrupt();
+        public abstract void Play(AnimationTargetBase target);
     }
 
     // Some animation property in Animate Targets
-    // TODO : Manage the interface with Scriptable Objects. (for setting)
 
     interface IAnimateProp { }
-
-    interface IInterruptable
-    {
-        void Interrupt(System.Type animType);
-    }
 
     interface IFlip : IAnimateProp
     {
         void Flip(System.Type animType);
     }
 
-    interface IFade : IAnimateProp, IInterruptable
+    interface IFade : IAnimateProp
     {
         void Fade(System.Type animType, float alpha, float time);
+        void InterruptFade();
     }
 
-    interface IPan : IAnimateProp, IInterruptable
+    interface IPan : IAnimateProp
     {
         void Pan(System.Type animType, float localValue, float time);
+        void InterruptPan();
     }
 
-    interface ITint : IAnimateProp, IInterruptable
+    interface ITint : IAnimateProp
     {
         void Tint(System.Type animType, Color tintTarget, float time);
+        void InterruptTint();
     }
 
 }

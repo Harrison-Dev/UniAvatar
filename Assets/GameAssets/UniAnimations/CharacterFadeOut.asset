@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef4b04322cf4da4e8d5288229daf14a, type: 3}
+  m_Name: CharacterFadeOut
+  m_EditorClassIdentifier: Assembly-CSharp:UniAvatar:CharacterFadeOut
+  FadingTime: 0.7
+  FadeoutOffsetY: -10
+  TintColor: {r: 0.7, g: 0.7, b: 0.7, a: 1}
