@@ -91,6 +91,11 @@ namespace UniAvatar
 
     public class PlayerFlip : IAnimateFunction
     {
+        public IAnimateFunction CreateInstance()
+        {
+            return new PlayerFlip();
+        }
+
         public void Interrupt()
         {
             // do nothing
@@ -110,6 +115,11 @@ namespace UniAvatar
         private IFade m_fadeTarget;
         private ITint m_tintTarget;
         private IPan m_panTarget;
+
+        public IAnimateFunction CreateInstance()
+        {
+            return new CharacterFadeIn();
+        }
 
         public void Interrupt()
         {
@@ -138,6 +148,11 @@ namespace UniAvatar
         private IFade m_fadeTarget;
         private ITint m_tintTarget;
         private IPan m_panTarget;
+
+        public IAnimateFunction CreateInstance()
+        {
+            return new CharacterFadeOut();
+        }
 
         public void Interrupt()
         {

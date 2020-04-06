@@ -32,7 +32,9 @@ namespace UniAvatar
             var target = m_animationTargetMap[targetKey];
             var function = m_animationFunctionMap[functionKey];
 
-            function.Play(target);
+            var functionInstance = function.CreateInstance();
+
+            functionInstance.Play(target);
         }
 
     }

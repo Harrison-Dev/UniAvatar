@@ -29,6 +29,7 @@ namespace UniAvatar
     {
         void Play(AnimationTargetBase target);
         void Interrupt();
+        IAnimateFunction CreateInstance();
     }
 
     // Some animation property in Animate Targets
