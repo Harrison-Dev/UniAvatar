@@ -22,6 +22,10 @@ namespace UniAvatar
 
         [SerializeField] private AudioClip m_printSound;
 
+        [Header("Character Animation Key")]
+        [SerializeField] private string m_characterTalkingKey = "CharacterFadeIn";
+        [SerializeField] private string m_characterPendingKey = "CharacterFadeOut";
+
         public bool IsTyping
         {
             get => m_textController.IsTyping;
@@ -72,11 +76,13 @@ namespace UniAvatar
             {
                 if (string.Equals(nameInList, name))
                 {
-                    AnimationManager.Instance.PlayAnim(nameInList, "CharacterFadeIn");
+                    AnimationManager.Instance.InterruptAnim(nameInList, m_characterTalkingKey);
+                    AnimationManager.Instance.PlayAnim(nameInList, m_characterTalkingKey);
                 }
                 else
                 {
-                    AnimationManager.Instance.PlayAnim(nameInList, "CharacterFadeOut");
+                    AnimationManager.Instance.InterruptAnim(nameInList, m_characterTalkingKey);
+                    AnimationManager.Instance.PlayAnim(nameInList, m_characterPendingKey);
                 }
             }
         }

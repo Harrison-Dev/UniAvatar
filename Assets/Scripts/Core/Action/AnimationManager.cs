@@ -12,7 +12,7 @@ namespace UniAvatar
         public string Key;
         public AnimationFunctionBase AnimationFunction;
     }
-    
+
     public class AnimationManager : MonoSingleton<AnimationManager>
     {
         public AnimationFunctionPair[] AnimationFunctionSetting;
@@ -43,6 +43,15 @@ namespace UniAvatar
 
             var functionInstnace = function.CreateInstance();
             functionInstnace.Play(target);
+        }
+
+        public void InterruptAnim(string targetKey, string functionKey)
+        {
+            var target = m_animationTargetMap[targetKey];
+            var function = m_animationFunctionMap[functionKey];
+
+            var functionInstnace = function.CreateInstance();
+            functionInstnace.Interrupt();
         }
 
     }
