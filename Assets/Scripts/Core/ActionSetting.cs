@@ -15,6 +15,7 @@ namespace UniAvatar
         public string Arg2;
         public string Arg3;
         public string Arg4;
+        public string Arg5;
     }
 
     [CreateAssetMenu(fileName = "ActionSetting", menuName = "UniAvatar/ActionSetting")]
@@ -39,8 +40,8 @@ namespace UniAvatar
                 data.Arg1 = grid[2, i];
                 data.Arg2 = grid[3, i];
                 data.Arg3 = grid[4, i];
-                data.Arg4 = grid[4, i];
-
+                data.Arg4 = grid[5, i];
+                data.Arg5 = grid[6, i];
 
                 if (!string.IsNullOrEmpty(data.Type))
                     ActionDatas.Add(data);

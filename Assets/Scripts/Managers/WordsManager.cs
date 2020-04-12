@@ -24,7 +24,7 @@ namespace UniAvatar
             m_wordSettingMap = WordSetting.WordSheet.ToDictionary(x => x.PrimaryKey);
         }
 
-        public string GetSWordByKey(string key)
+        public string GetWordByKey(string key)
         {
             return m_wordSettingMap[key].Contents[CurrentLanaguage];
         }

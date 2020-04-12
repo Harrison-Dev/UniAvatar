@@ -12,7 +12,7 @@ namespace UniAvatar
             this.Key = key;
         }
         public string Key;
-        public int Value;
+        public string Value;
     }
 
     public class FlagManager : MonoSingleton<FlagManager>
@@ -36,7 +36,7 @@ namespace UniAvatar
             m_flagMap = RuntimeFlags.ToDictionary(key => key.Key, value => value);
         }
 
-        public void Set(string flagName, int value)
+        public void Set(string flagName, string value)
         {
             if (m_flagMap.ContainsKey(flagName) == false)
             {
@@ -47,12 +47,12 @@ namespace UniAvatar
             m_flagMap[flagName].Value = value;
         }
 
-        public int Get(string flagName)
+        public string Get(string flagName)
         {
             if (m_flagMap.ContainsKey(flagName) == false)
             {
                 Debug.LogError($"Not found a flag named {flagName}");
-                return -1;
+                return string.Empty;
             }
 
             return m_flagMap[flagName].Value;
