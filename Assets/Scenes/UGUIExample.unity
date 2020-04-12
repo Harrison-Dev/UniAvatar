@@ -2243,6 +2243,9 @@ MonoBehaviour:
   - Key: CharacterJump
     AnimationFunction: {fileID: 11400000, guid: a783441ae22696e48adb900858050578,
       type: 2}
+  - Key: AkiSmile
+    AnimationFunction: {fileID: 11400000, guid: 3518c1644b7a4e6468a5fa4df9933600,
+      type: 2}
 --- !u!1 &1531132401
 GameObject:
   m_ObjectHideFlags: 0

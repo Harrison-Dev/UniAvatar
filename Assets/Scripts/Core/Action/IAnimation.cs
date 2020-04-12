@@ -60,4 +60,9 @@ namespace UniAvatar
         void InterruptJump();
     }
 
+    interface ISpriteChange : IAnimateProp
+    {
+        void Change(Sprite sprite);
+    }
+
 }

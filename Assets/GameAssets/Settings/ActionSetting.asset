@@ -39,6 +39,12 @@ MonoBehaviour:
     Arg3: 
     Arg4: 
   - Step: 5
+    Type: Animate
+    Arg1: "\u5F69\u5E0C"
+    Arg2: AkiSmile
+    Arg3: 
+    Arg4: 
+  - Step: 6
     Type: Talk
     Arg1: "\u5F69\u5E0C"
     Arg2: "\u9019\u6A23\u5F88\u4E0D\u5065\u5EB7\u5594"

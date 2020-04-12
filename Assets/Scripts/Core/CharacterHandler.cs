@@ -6,7 +6,7 @@ using DG.Tweening;
 
 namespace UniAvatar
 {
-    public class CharacterHandler : AnimationTargetBase, IFlip, IPan, ITint, IJump
+    public class CharacterHandler : AnimationTargetBase, IFlip, IPan, ITint, IJump, ISpriteChange
     {
         private Image m_targetImage;
         private Tween m_panTween;
@@ -77,6 +77,11 @@ namespace UniAvatar
         public void InterruptJump()
         {
             // Do nothing.
+        }
+
+        public void Change(Sprite sprite)
+        {
+            m_targetImage.sprite = sprite;
         }
     }
 }
