@@ -27,11 +27,11 @@ namespace UniAvatar.Example
             // Tinting
             var tintColor = Color.white;
             m_tintTarget = targetTransform.GetComponent<ITint>();
-            m_tintTarget?.Tint(typeof(ITint), tintColor, FadingTime);
+            m_tintTarget?.Tint(tintColor, FadingTime);
 
             // Paning
             m_panTarget = targetTransform.GetComponent<IPan>();
-            m_panTarget.Pan(typeof(IPan), 0, FadingTime);
+            m_panTarget.Pan(0, FadingTime);
         }
     }
 }

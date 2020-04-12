@@ -43,25 +43,31 @@ namespace UniAvatar
 
     interface IFlip : IAnimateProp
     {
-        void Flip(System.Type animType);
+        void Flip();
     }
 
     interface IFade : IAnimateProp
     {
-        void Fade(System.Type animType, float alpha, float time);
+        void Fade(float alpha, float time);
         void InterruptFade();
     }
 
     interface IPan : IAnimateProp
     {
-        void Pan(System.Type animType, float localValue, float time);
+        void Pan(float localValue, float time);
         void InterruptPan();
     }
 
     interface ITint : IAnimateProp
     {
-        void Tint(System.Type animType, Color tintTarget, float time);
+        void Tint(Color tintTarget, float time);
         void InterruptTint();
+    }
+
+    interface IJump : IAnimateProp
+    {
+        void Jump();
+        void InterruptJump();
     }
 
 }

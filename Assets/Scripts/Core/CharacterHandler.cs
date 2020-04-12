@@ -6,11 +6,14 @@ using DG.Tweening;
 
 namespace UniAvatar
 {
-    public class CharacterHandler : AnimationTargetBase, IFlip, IPan, ITint
+    public class CharacterHandler : AnimationTargetBase, IFlip, IPan, ITint, IJump
     {
         private Image m_targetImage;
         private Tween m_panTween;
         private Tween m_tintTween;
+
+        [SerializeField]
+        private Animator m_jumpAnimator;
 
         protected override void Awake()
         {
@@ -29,13 +32,7 @@ namespace UniAvatar
             transform.localScale = new Vector3(currentFlip * -1, 1, 1);
         }
 
-        public void Flip(System.Type anim)
-        {
-            // No Register : A one step animation.
-            Flip();
-        }
-
-        public void Pan(System.Type anim, float localValue, float time)
+        public void Pan(float localValue, float time)
         {
             m_panTween = m_targetImage.transform.DOLocalMoveY(localValue, time);
             m_panTween.SetEase(Ease.OutSine);
@@ -48,7 +45,7 @@ namespace UniAvatar
             });
         }
 
-        public void Tint(System.Type anim, Color tintTarget, float time)
+        public void Tint(Color tintTarget, float time)
         {
             m_tintTween = m_targetImage.DOColor(tintTarget, time);
             m_tintTween.SetEase(Ease.OutQuad);
@@ -69,6 +66,16 @@ namespace UniAvatar
         public void InterruptTint()
         {
             m_tintTween?.Kill();
+        }
+
+        public void Jump()
+        {
+            m_jumpAnimator?.SetTrigger("Jump");
+        }
+
+        public void InterruptJump()
+        {
+            // Do nothing.
         }
     }
 }

@@ -16,7 +16,7 @@ namespace UniAvatar.Example
         {
             var targetTransform = target.transform;
             var flipTarget = targetTransform.GetComponent<IFlip>();
-            flipTarget?.Flip(typeof(IFlip));
+            flipTarget?.Flip();
         }
     }
 }

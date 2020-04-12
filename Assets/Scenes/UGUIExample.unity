@@ -438,6 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: "\u904A\u7A57"
+  m_jumpAnimator: {fileID: 0}
 --- !u!1 &249567910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,6 +1698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1231091999}
   - component: {fileID: 1231092000}
+  - component: {fileID: 1231092001}
   m_Layer: 5
   m_Name: Character Left
   m_TagString: Untagged
@@ -1737,6 +1739,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: "\u5F69\u5E0C"
+  m_jumpAnimator: {fileID: 1231092001}
+--- !u!95 &1231092001
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231091998}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76422bf717c42ec48a2c111fb719a730, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1285027939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,6 +2305,8 @@ MonoBehaviour:
   m_textController: {fileID: 366114320}
   m_nameBox: {fileID: 645936881}
   m_printSound: {fileID: 8300000, guid: 4457c27178d8e4ec2aef0a0406b75e06, type: 3}
+  m_characterTalkingKey: CharacterFadeIn
+  m_characterPendingKey: CharacterFadeOut
 --- !u!224 &1604056901
 RectTransform:
   m_ObjectHideFlags: 0
