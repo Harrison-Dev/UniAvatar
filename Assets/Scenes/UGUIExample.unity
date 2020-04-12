@@ -437,7 +437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6adf6ec028ee974aa609c41c63f7f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key: "\u904A\u7A57"
   m_jumpAnimator: {fileID: 0}
 --- !u!1 &249567910
 GameObject:
@@ -1738,7 +1737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6adf6ec028ee974aa609c41c63f7f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key: "\u5F69\u5E0C"
   m_jumpAnimator: {fileID: 1231092001}
 --- !u!95 &1231092001
 Animator:
@@ -2230,12 +2228,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0861fcb9969aa4e828bb69e095ab02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimationTargetSetting:
+  - Key: "\u904A\u7A57"
+    AnimateTarget: {fileID: 129788442}
+  - Key: "\u5F69\u5E0C"
+    AnimateTarget: {fileID: 1231092000}
   AnimationFunctionSetting:
   - Key: CharacterFadeIn
     AnimationFunction: {fileID: 11400000, guid: 5c590f861b859ec49a002e8c66729bee,
       type: 2}
   - Key: CharacterFadeOut
     AnimationFunction: {fileID: 11400000, guid: 3ab2a13cf186cc549bb631fef6bba9a4,
+      type: 2}
+  - Key: CharacterJump
+    AnimationFunction: {fileID: 11400000, guid: a783441ae22696e48adb900858050578,
       type: 2}
 --- !u!1 &1531132401
 GameObject:

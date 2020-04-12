@@ -33,6 +33,12 @@ MonoBehaviour:
     Arg3: 
     Arg4: 
   - Step: 4
+    Type: Animate
+    Arg1: 
+    Arg2: "\u5F69\u5E0C"
+    Arg3: CharacterJump
+    Arg4: CharacterJump
+  - Step: 5
     Type: Talk
     Arg1: "\u5F69\u5E0C"
     Arg2: "\u9019\u6A23\u5F88\u4E0D\u5065\u5EB7\u5594"

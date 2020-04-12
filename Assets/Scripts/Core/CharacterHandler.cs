@@ -15,9 +15,8 @@ namespace UniAvatar
         [SerializeField]
         private Animator m_jumpAnimator;
 
-        protected override void Awake()
+        protected void Awake()
         {
-            base.Awake();
             Init();
         }
 
@@ -41,7 +40,7 @@ namespace UniAvatar
             m_panTween.OnKill(() =>
             {
                 m_panTween = null;
-                m_targetImage.transform.SetLocalPositionY(localValue);
+                // m_targetImage.transform.SetLocalPositionY(localValue);
             });
         }
 
@@ -54,18 +53,20 @@ namespace UniAvatar
             m_tintTween.OnKill(() =>
             {
                 m_tintTween = null;
-                m_targetImage.color = tintTarget;
+                // m_targetImage.color = tintTarget;
             });
         }
 
         public void InterruptPan()
         {
             m_panTween?.Kill();
+            m_panTween.OnKill(null);
         }
 
         public void InterruptTint()
         {
             m_tintTween?.Kill();
+            m_tintTween.OnKill(null);
         }
 
         public void Jump()

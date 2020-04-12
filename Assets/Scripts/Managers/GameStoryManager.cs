@@ -30,9 +30,9 @@ namespace UniAvatar
             m_actionMap.Add("Talk", new Talk());
             m_actionMap.Add("Animate", new Animate());
 
-            foreach(var action in ActionSetting.ActionDatas)
+            foreach (var action in ActionSetting.ActionDatas)
             {
-                if(action.Type == "Talk")
+                if (action.Type == "Talk")
                 {
                     m_nameList.Add(action.Arg1);
                 }
@@ -59,6 +59,12 @@ namespace UniAvatar
             var arg4 = actionData.Arg4;
 
             action.Execute(arg1, arg2, arg3, arg4);
+
+            // If the action is animate, pass to next.
+            if (string.Equals(actionData.Type, "Animate"))
+            {
+                Play();
+            }
         }
 
     }

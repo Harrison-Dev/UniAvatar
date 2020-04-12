@@ -13,17 +13,7 @@ namespace UniAvatar
 
     public abstract class AnimationTargetBase : MonoBehaviour
     {
-        public string Key;
 
-        protected virtual void Awake()
-        {
-            Register();
-        }
-
-        protected void Register()
-        {
-            AnimationManager.Instance.Register(Key, this);
-        }
     }
 
     public abstract class AnimationFunctionBase : ScriptableObject

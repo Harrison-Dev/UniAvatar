@@ -13,8 +13,16 @@ namespace UniAvatar
         public AnimationFunctionBase AnimationFunction;
     }
 
+    [System.Serializable]
+    public class AnimationTargetPair
+    {
+        public string Key;
+        public AnimationTargetBase AnimateTarget;
+    }
+
     public class AnimationManager : MonoSingleton<AnimationManager>
     {
+        public AnimationTargetPair[] AnimationTargetSetting;
         public AnimationFunctionPair[] AnimationFunctionSetting;
 
         private Dictionary<string, AnimationTargetBase> m_animationTargetMap = new Dictionary<string, AnimationTargetBase>();
@@ -27,12 +35,8 @@ namespace UniAvatar
 
         private void Init()
         {
+            m_animationTargetMap = AnimationTargetSetting.ToDictionary(key => key.Key, value => value.AnimateTarget);
             m_animationFunctionMap = AnimationFunctionSetting.ToDictionary(key => key.Key, value => value.AnimationFunction);
-        }
-
-        public void Register(string key, AnimationTargetBase animatedTarget)
-        {
-            m_animationTargetMap.Add(key, animatedTarget);
         }
 
         // TODO : interrput
