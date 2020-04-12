@@ -2,7 +2,7 @@ Step,Action,Arg1,Arg2,Arg3,Arg4,Content
 1,Talk,遊穗,早安,,,
 2,Talk,彩希,早安，你吃早餐了嗎？,,,
 3,Talk,遊穗,我不吃早餐,,,
-4,Animate,,彩希,CharacterJump,,
+4,Animate,彩希,CharacterJump,,,
 5,Talk,彩希,這樣很不健康喔,,,
 6,,,,,,
 7,,,,,,
