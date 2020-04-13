@@ -7,7 +7,7 @@ namespace UniAvatar
     public class Talk : IAction
     {
         public void Execute(string nameKey, string contentKey,
-                            string arg3, string arg4, string arg5)
+                            string arg3, string arg4, string arg5, System.Action callback)
         {
             // Get content
             string name = WordsManager.Instance.GetWordByKey(nameKey);

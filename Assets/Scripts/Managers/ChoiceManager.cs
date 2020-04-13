@@ -24,11 +24,11 @@ namespace UniAvatar
 
         }
 
-        public void ShowChoice(string Flag, string C1Key, string C2Key, string C1Value, string C2Value)
+        public void ShowChoice(string Flag, string C1Key, string C2Key, string C1Value, string C2Value, System.Action callback)
         {
             var choice1 = WordsManager.Instance.GetWordByKey(C1Key);
             var choice2 = WordsManager.Instance.GetWordByKey(C2Key);
-            Handler.ShowChoice(Flag, choice1, choice2, C1Value, C2Value);
+            Handler.ShowChoice(Flag, choice1, choice2, C1Value, C2Value, callback);
         }
     }
 }

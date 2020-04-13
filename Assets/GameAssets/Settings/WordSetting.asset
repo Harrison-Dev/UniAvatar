@@ -44,6 +44,36 @@ MonoBehaviour:
     - "\u9019\u6A23\u5C0D\u8EAB\u9AD4\u4E0D\u597D\u5594"
     - Oh so bad for your health
     - "\u3042\u306A\u305F\u306E\u5065\u5EB7\u306E\u305F\u3081\u306B\u3042\u3042\u305D\u3046\u60AA\u3044\u3067\u3059\r"
+  - PrimaryKey: "(\u8A72......\u8A72\u600E\u9EBC\u8FA6)"
+    Contents:
+    - "(\u8A72......\u8A72\u600E\u9EBC\u8FA6)"
+    - (The ...... how to do)
+    - "\uFF08......\u884C\u3046\u65B9\u6CD5\uFF09\r"
+  - PrimaryKey: "\u4E56\u4E56\u53BB\u5403"
+    Contents:
+    - "\u4E56\u4E56\u53BB\u5403"
+    - Obediently eat
+    - "\u7D20\u76F4\u306B\u98DF\u3079\u307E\u3059\r"
+  - PrimaryKey: "\u5C31\u662F\u4E0D\u5403"
+    Contents:
+    - "\u5C31\u662F\u4E0D\u5403"
+    - Do not eat
+    - "\u98DF\u3079\u307E\u305B\u3093\r"
+  - PrimaryKey: "\u5403"
+    Contents:
+    - "\u5403"
+    - eat
+    - "\u98DF\u3079\u307E\u3059\r"
+  - PrimaryKey: "\u592A\u597D\u4E86\uFF01"
+    Contents:
+    - "\u592A\u597D\u4E86\uFF01"
+    - Great!
+    - "\u3059\u3070\u3089\u3057\u3044\u3067\u3059\uFF01\r"
+  - PrimaryKey: "\u6211\u6703\u4E56\u4E56\u53BB\u5403\u7684..."
+    Contents:
+    - "\u6211\u6703\u4E56\u4E56\u53BB\u5403\u7684..."
+    - I will obediently eat it ...
+    - "\u79C1\u306F\u7D20\u76F4\u306B\u305D\u308C\u3092\u98DF\u3079\u308B\u3088\u3046\u306B\u306A\u308A\u307E\u3059...\r"
   Languages:
   - zh-tw
   - en

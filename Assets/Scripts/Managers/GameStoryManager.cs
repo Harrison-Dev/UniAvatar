@@ -11,7 +11,7 @@ namespace UniAvatar
         public ActionSetting ActionSetting;
 
         private Dictionary<string, IAction> m_actionMap = new Dictionary<string, IAction>();
-        private int m_actionPtr = 0;
+        [SerializeField] [ReadOnly] private int m_actionPtr = 1;
 
         public HashSet<string> m_nameList = new HashSet<string>();
 
@@ -53,7 +53,6 @@ namespace UniAvatar
             if (string.IsNullOrEmpty(actionData.Type))
                 return;
 
-            var action = m_actionMap[actionData.Type];
             var arg1 = actionData.Arg1;
             var arg2 = actionData.Arg2;
             var arg3 = actionData.Arg3;
@@ -69,20 +68,23 @@ namespace UniAvatar
                 var unmatchStep = int.Parse(arg4);
 
                 var flagValue = FlagManager.Instance.Get(flag);
-                if(string.Equals(flagValue, matchValue))
+                if (string.Equals(flagValue, matchValue))
                 {
-                    m_actionPtr = matchStep;
+                    m_actionPtr = matchStep - 1;
                 }
                 else
                 {
-                    m_actionPtr = unmatchStep;
+                    m_actionPtr = unmatchStep - 1;
                 }
 
+                // Also, jump to next step after branching.
+                Play();
                 return;
             }
 
-            // Execute next action.
-            action.Execute(arg1, arg2, arg3, arg4, arg5);
+            // Execute next action, if some action auto go next, send callback play.
+            var action = m_actionMap[actionData.Type];
+            action.Execute(arg1, arg2, arg3, arg4, arg5, () => Play());
 
             // If the action is animate, pass to next.
             if (string.Equals(actionData.Type, "Animate"))

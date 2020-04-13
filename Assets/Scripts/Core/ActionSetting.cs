@@ -31,6 +31,7 @@ namespace UniAvatar
 
             var grid = CSVReader.SplitCsvGrid(dataStr);
             ActionDatas = new List<ActionData>();
+            
 
             for (var i = 1; i < grid.GetLength(1); i++)
             {

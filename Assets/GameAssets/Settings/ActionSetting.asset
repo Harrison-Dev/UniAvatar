@@ -20,33 +20,74 @@ MonoBehaviour:
     Arg2: "\u65E9\u5B89"
     Arg3: 
     Arg4: 
+    Arg5: 
   - Step: 2
     Type: Talk
     Arg1: "\u5F69\u5E0C"
     Arg2: "\u65E9\u5B89\uFF0C\u4F60\u5403\u65E9\u9910\u4E86\u55CE\uFF1F"
     Arg3: 
     Arg4: 
+    Arg5: 
   - Step: 3
     Type: Talk
     Arg1: "\u904A\u7A57"
     Arg2: "\u6211\u4E0D\u5403\u65E9\u9910"
     Arg3: 
     Arg4: 
+    Arg5: 
   - Step: 4
     Type: Animate
     Arg1: "\u5F69\u5E0C"
     Arg2: CharacterJump
     Arg3: 
     Arg4: 
+    Arg5: 
   - Step: 5
     Type: Animate
     Arg1: "\u5F69\u5E0C"
     Arg2: AkiSmile
     Arg3: 
     Arg4: 
+    Arg5: 
   - Step: 6
     Type: Talk
     Arg1: "\u5F69\u5E0C"
     Arg2: "\u9019\u6A23\u5F88\u4E0D\u5065\u5EB7\u5594"
     Arg3: 
     Arg4: 
+    Arg5: 
+  - Step: 7
+    Type: Talk
+    Arg1: "\u904A\u7A57"
+    Arg2: "(\u8A72......\u8A72\u600E\u9EBC\u8FA6)"
+    Arg3: 
+    Arg4: 
+    Arg5: 
+  - Step: 8
+    Type: Choice
+    Arg1: "\u5403\u4E0D\u5403\u98EF"
+    Arg2: "\u4E56\u4E56\u53BB\u5403"
+    Arg3: "\u5C31\u662F\u4E0D\u5403"
+    Arg4: "\u5403"
+    Arg5: "\u4E0D\u5403"
+  - Step: 9
+    Type: Branch
+    Arg1: "\u5403\u4E0D\u5403\u98EF"
+    Arg2: "\u5403"
+    Arg3: 10
+    Arg4: 6
+    Arg5: 
+  - Step: 10
+    Type: Talk
+    Arg1: "\u904A\u7A57"
+    Arg2: "\u6211\u6703\u4E56\u4E56\u53BB\u5403\u7684..."
+    Arg3: 
+    Arg4: 
+    Arg5: 
+  - Step: 11
+    Type: Talk
+    Arg1: "\u5F69\u5E0C"
+    Arg2: "\u592A\u597D\u4E86\uFF01"
+    Arg3: 
+    Arg4: 
+    Arg5: 

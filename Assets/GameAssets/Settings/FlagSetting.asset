@@ -15,3 +15,4 @@ MonoBehaviour:
   WordsheetCSV: {fileID: 4900000, guid: 9a76daf360994bb45a2b9a22f6a4b2a4, type: 3}
   Flags:
   - Test
+  - "\u5403\u4E0D\u5403\u98EF"
