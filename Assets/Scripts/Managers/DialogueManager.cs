@@ -16,6 +16,9 @@ namespace UniAvatar
         private TextTyper m_textController;
 
         [SerializeField]
+        private TypeTextComponent m_textControllerUGUI;
+
+        [SerializeField]
         private NameboxHandler m_nameBox;
 
         private Queue<string> m_dialogueLines = new Queue<string>();
@@ -28,7 +31,17 @@ namespace UniAvatar
 
         public bool IsTyping
         {
-            get => m_textController.IsTyping;
+            get
+            {
+                if (m_textController)
+                {
+                    return m_textController.IsTyping;
+                }
+                else
+                {
+                    return m_textControllerUGUI.IsSkippable();
+                }
+            }
         }
 
         private void Awake()
@@ -39,7 +52,8 @@ namespace UniAvatar
         private void Start()
         {
             GoNextWord();
-            m_textController.CharacterPrinted.AsObservable().Subscribe(_ => AudioManager.Instance.PlaySE(m_printSound));
+            m_textController?.CharacterPrinted.AsObservable().Subscribe(_ => AudioManager.Instance.PlaySE(m_printSound));
+            m_textControllerUGUI?.CharacterPrinted.AsObservable().Subscribe(_ => AudioManager.Instance.PlaySE(m_printSound));
         }
 
         private void Init()
@@ -54,7 +68,8 @@ namespace UniAvatar
 
         public void SkipCurrent()
         {
-            m_textController.Skip();
+            m_textController?.Skip();
+            m_textControllerUGUI?.SkipTypeText();
         }
 
         private void GoNextWord()
@@ -63,13 +78,16 @@ namespace UniAvatar
                 return;
 
             string word = m_dialogueLines.Dequeue();
-            m_textController.TypeText(word);
+
+            m_textController?.TypeText(word);
+            m_textControllerUGUI?.SetText(word, 0.05f);
         }
 
         public void Say(string name, string content)
         {
             m_nameBox.SetName(name);
-            m_textController.TypeText(content);
+            m_textController?.TypeText(content);
+            m_textControllerUGUI?.SetText(content, 0.05f);
 
             // Say Animation (Temp)
             foreach (var nameInList in GameStoryManager.Instance.m_nameList)

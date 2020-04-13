@@ -15,9 +15,13 @@ namespace UniAvatar
         public Button Choice1;
         public Button Choice2;
 
-        private TMP_Text m_c1Text;
-        private TMP_Text m_c2Text;
-
+#if TMP_SUPPORT
+        private TMP_Text m_c1TMP;
+        private TMP_Text m_c2TMP;
+#else
+        private Text m_c1Text;
+        private Text m_c2Text;
+#endif
         private IDisposable m_sub1;
         private IDisposable m_sub2;
 
@@ -28,14 +32,24 @@ namespace UniAvatar
 
         private void Init()
         {
-            m_c1Text = Choice1.GetComponentInChildren<TMP_Text>();
-            m_c2Text = Choice2.GetComponentInChildren<TMP_Text>();
+#if TMP_SUPPORT
+            m_c1TMP = Choice1.GetComponentInChildren<TMP_Text>();
+            m_c2TMP = Choice2.GetComponentInChildren<TMP_Text>();
+#else
+            m_c1Text = Choice1.GetComponentInChildren<Text>();
+            m_c2Text = Choice2.GetComponentInChildren<Text>();
+#endif
         }
 
         public void ShowChoice(string flag, string c1Text, string c2Text, string c1Value, string c2Value, System.Action callback)
         {
+ #if TMP_SUPPORT
+            m_c1TMP.text = c1Text;
+            m_c2TMP.text = c2Text;
+#else
             m_c1Text.text = c1Text;
-            m_c2Text.text = c2Text;
+            m_c2Text.text = c2Text;;
+#endif
 
             m_choiceAnimator.SetBool("Show", true);
 
