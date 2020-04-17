@@ -83,8 +83,12 @@ namespace UniAvatar
             m_textControllerUGUI?.SetText(word, 0.05f);
         }
 
-        public void Say(string name, string content)
+        public void Say(string nameKey, string contentKey)
         {
+            // Get content
+            string name = WordsManager.Instance.GetWordByKey(nameKey);
+            string content = WordsManager.Instance.GetWordByKey(contentKey);
+
             m_nameBox.SetName(name);
             m_textController?.TypeText(content);
             m_textControllerUGUI?.SetText(content, 0.05f);
@@ -92,7 +96,7 @@ namespace UniAvatar
             // Say Animation (Temp)
             foreach (var nameInList in GameStoryManager.Instance.m_nameList)
             {
-                if (string.Equals(nameInList, name))
+                if (string.Equals(nameInList, nameKey))
                 {
                     AnimationManager.Instance.InterruptAnim(nameInList, m_characterTalkingKey);
                     AnimationManager.Instance.PlayAnim(nameInList, m_characterTalkingKey);
