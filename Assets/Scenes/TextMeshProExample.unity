@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29eb804c192ee334d9c11346b2b33ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_nameBox: {fileID: 23424112}
+  m_nameBox: {fileID: 23424110}
 --- !u!1 &694558204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,6 +2499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_textController: {fileID: 366114320}
+  m_textControllerUGUI: {fileID: 0}
   m_nameBox: {fileID: 645936881}
   m_printSound: {fileID: 8300000, guid: 4457c27178d8e4ec2aef0a0406b75e06, type: 3}
   m_characterTalkingKey: CharacterFadeIn
@@ -2730,6 +2731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionSetting: {fileID: 11400000, guid: 44a366bc76b29c74e9e42f8e8a041fb3, type: 2}
+  m_actionPtr: 1
 --- !u!1 &1731423550
 GameObject:
   m_ObjectHideFlags: 0

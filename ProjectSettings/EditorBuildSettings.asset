@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/UGUIExample.unity
+    path: Assets/Scenes/TextMeshProExample.unity
     guid: b09928e7566c73d46a37e65b98a64b36
   m_configObjects: {}
