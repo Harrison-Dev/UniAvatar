@@ -2,11 +2,19 @@
 
 An open source dialogue system for Unity Engine with a simple text adventure game (ADV) sample.
 
+## Demo
+
+<https://harrison-dev.github.io/demos/UniAvatarDemo/>
+
 ## License
 
 Source Code in the example is MIT License.
 
 The related projects license should refer each project link below.
+
+## Contributing
+
+Feel free to send PR to this project, we can enhance it together.
 
 ## Related Projects
 
@@ -18,4 +26,4 @@ The related projects license should refer each project link below.
 
 ### [Text Mesh Pro](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html)
 
-## [NotoFonts](https://www.google.com/get/noto/)
+### [NotoFonts](https://www.google.com/get/noto/)
