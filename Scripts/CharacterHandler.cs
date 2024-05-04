@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
+using LitMotion;
 
 namespace UniAvatar
 {
     public class CharacterHandler : AnimationTargetBase, IFlip, IPan, ITint, IJump, ISpriteChange
     {
         private Image m_targetImage;
-        private Tween m_panTween;
-        private Tween m_tintTween;
+        private MotionHandle? m_panTween;
+        private MotionHandle? m_tintTween;
 
         [SerializeField]
         private Animator m_jumpAnimator;
@@ -33,40 +33,33 @@ namespace UniAvatar
 
         public void Pan(float localValue, float time)
         {
-            m_panTween = m_targetImage.transform.DOLocalMoveY(localValue, time);
-            m_panTween.SetEase(Ease.OutSine);
-
-            m_panTween.OnComplete(() => m_panTween = null);
-            m_panTween.OnKill(() =>
-            {
-                m_panTween = null;
-                // m_targetImage.transform.SetLocalPositionY(localValue);
-            });
+            var curPos = m_targetImage.transform.localPosition;
+            var nextPos = new Vector3(curPos.x, localValue, curPos.z);
+            m_panTween = LMotion.Create(curPos, nextPos, time)
+                                .WithEase(Ease.OutSine)
+                                .Bind(t => m_targetImage.transform.localPosition = t);
         }
 
         public void Tint(Color tintTarget, float time)
         {
-            m_tintTween = m_targetImage.DOColor(tintTarget, time);
-            m_tintTween.SetEase(Ease.OutQuad);
-
-            m_tintTween.OnComplete(() => m_tintTween = null);
-            m_tintTween.OnKill(() =>
-            {
-                m_tintTween = null;
-                // m_targetImage.color = tintTarget;
-            });
+            m_tintTween = LMotion.Create(m_targetImage.color, tintTarget, time)
+                                 .WithEase(Ease.OutQuad)
+                                 .Bind(t => m_targetImage.color = t);
         }
 
         public void InterruptPan()
         {
-            m_panTween?.Kill();
-            m_panTween.OnKill(null);
+            // m_panTween?.Kill();
+            if (!m_panTween.HasValue) return;
+            m_panTween.Value.Cancel();
+            m_panTween = null;
         }
 
         public void InterruptTint()
         {
-            m_tintTween?.Kill();
-            m_tintTween.OnKill(null);
+            if (!m_tintTween.HasValue) return;
+            m_tintTween.Value.Cancel();
+            m_tintTween = null;
         }
 
         public void Jump()

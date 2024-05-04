@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using DG.Tweening;
+﻿using UnityEngine;
 
 namespace UniAvatar
 {
@@ -47,11 +44,9 @@ namespace UniAvatar
             // Fade out previous BGM & fade in next.
             if (m_bgmSource.isPlaying)
             {
-                var sequence = DOTween.Sequence();
-                sequence.Append(m_bgmSource.DOFade(0, 0.5f));
-                sequence.AppendCallback(() => m_bgmSource.clip = bgm);
-                sequence.Append(m_bgmSource.DOFade(1, 0.5f));
-                sequence.Play();
+                m_bgmSource.Stop();
+                m_bgmSource.clip = bgm;
+                m_bgmSource.Play();
             }
             else
             {
