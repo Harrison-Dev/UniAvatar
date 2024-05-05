@@ -29,38 +29,34 @@ namespace UniAvatar
 
     // Some animation property in Animate Targets
 
-    interface IAnimateProp { }
+    interface IAnimBase { void Interrupt(); }
 
-    interface IFlip : IAnimateProp
+    interface IFlip : IAnimBase
     {
         void Flip();
     }
 
-    interface IFade : IAnimateProp
+    interface IFade : IAnimBase
     {
         void Fade(float alpha, float time);
-        void InterruptFade();
     }
 
-    interface IPan : IAnimateProp
+    interface IPan : IAnimBase
     {
         void Pan(float localValue, float time);
-        void InterruptPan();
     }
 
-    interface ITint : IAnimateProp
+    interface ITint : IAnimBase
     {
         void Tint(Color tintTarget, float time);
-        void InterruptTint();
     }
 
-    interface IJump : IAnimateProp
+    interface IJump : IAnimBase
     {
         void Jump();
-        void InterruptJump();
     }
 
-    interface ISpriteChange : IAnimateProp
+    interface ISpriteChange : IAnimBase
     {
         void Change(Sprite sprite);
     }

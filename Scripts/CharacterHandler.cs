@@ -47,34 +47,20 @@ namespace UniAvatar
                                  .Bind(t => m_targetImage.color = t);
         }
 
-        public void InterruptPan()
-        {
-            // m_panTween?.Kill();
-            if (!m_panTween.HasValue) return;
-            m_panTween.Value.Cancel();
-            m_panTween = null;
-        }
-
-        public void InterruptTint()
-        {
-            if (!m_tintTween.HasValue) return;
-            m_tintTween.Value.Cancel();
-            m_tintTween = null;
-        }
-
         public void Jump()
         {
             m_jumpAnimator?.SetTrigger("Jump");
         }
 
-        public void InterruptJump()
-        {
-            // Do nothing.
-        }
-
         public void Change(Sprite sprite)
         {
             m_targetImage.sprite = sprite;
+        }
+
+        public void Interrupt()
+        {
+            m_panTween?.Cancel(); m_panTween = null;
+            m_tintTween?.Cancel(); m_tintTween = null;
         }
     }
 }

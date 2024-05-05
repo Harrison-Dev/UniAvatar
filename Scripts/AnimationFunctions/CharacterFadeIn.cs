@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UniAvatar.Example
 {
@@ -15,9 +13,9 @@ namespace UniAvatar.Example
 
         public override void Interrupt()
         {
-            m_fadeTarget?.InterruptFade();
-            m_tintTarget?.InterruptTint();
-            m_panTarget?.InterruptPan();
+            m_fadeTarget?.Interrupt();
+            m_tintTarget?.Interrupt();
+            m_panTarget?.Interrupt();
         }
 
         public override void Play(AnimationTargetBase target)

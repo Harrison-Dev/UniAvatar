@@ -11,7 +11,7 @@ namespace UniAvatar.Example
 
         public override void Interrupt()
         {
-            m_jumpTarget?.InterruptJump();
+            m_jumpTarget?.Interrupt();
         }
 
         public override void Play(AnimationTargetBase target)
