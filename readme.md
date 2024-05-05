@@ -16,14 +16,13 @@ The related projects license should refer each project link below.
 
 Feel free to send PR to this project, we can enhance it together.
 
-## Related Projects
+## Dependencies (please install via PM)
 
 ### [UniRx](https://github.com/neuecc/UniRx)
-
-### [dotween](https://github.com/Demigiant/dotween)
-
+### [LitMotion](https://github.com/AnnulusGames/LitMotion)
 ### [unity-text-typer](https://github.com/redbluegames/unity-text-typer)
-
 ### [Text Mesh Pro](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html)
+### [VContainer](https://github.com/hadashiA/VContainer)
 
+## Font
 ### [NotoFonts](https://www.google.com/get/noto/)
