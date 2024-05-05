@@ -7,7 +7,7 @@ using VContainer;
 
 namespace UniAvatar
 {
-    public class InputManager :UniAvatarManagerBase
+    public class InputController :UAvatarControllerBase
     {
         [SerializeField]
         private Button m_interactionButton;
@@ -15,8 +15,8 @@ namespace UniAvatar
         [SerializeField]
         private KeyCode m_nextKey = KeyCode.Z;
 
-        [Inject] private DialogueManager _dialogueManager;
-        [Inject] private GameStoryManager _gameStoryManager;
+        [Inject] private DialogueController _dialogueController;
+        [Inject] private GameStoryController _gameStoryController;
 
         [Header("Playing setting")]
         [SerializeField] private float m_clickColddown = 0.5f;
@@ -40,13 +40,13 @@ namespace UniAvatar
 
         protected void HandleClick()
         {
-            if(_dialogueManager.IsTyping)
+            if(_dialogueController.IsTyping)
             {
-                _dialogueManager.SkipCurrent();
+                _dialogueController.SkipCurrent();
             }
             else
             {
-                _gameStoryManager.Play();
+                _gameStoryController.Play();
             }
         }
     }

@@ -4,16 +4,16 @@ using VContainer;
 
 namespace UniAvatar
 {
-    public class GameStoryManager : UniAvatarManagerBase
+    public class GameStoryController : UAvatarControllerBase
     {
         public ActionSetting ActionSetting;
         private Dictionary<string, IAction> m_actionMap = new Dictionary<string, IAction>();
         [SerializeField] [ReadOnly] private int m_actionPtr = 1;
 
-        [Inject] private IFlagManager _flagManager;
-        [Inject] private DialogueManager _dialogueManager;
-        [Inject] private AnimationManager _animationManager;
-        [Inject] private ChoiceManager _choiceManager;
+        [Inject] private IFlagController _flagController;
+        [Inject] private DialogueController _dialogueController;
+        [Inject] private AnimationController _animationController;
+        [Inject] private ChoiceController _choiceController;
 
         private void Awake()
         {
@@ -27,9 +27,9 @@ namespace UniAvatar
 
         private void Init()
         {
-            m_actionMap.Add("Talk", new Talk(_dialogueManager));
-            m_actionMap.Add("Animate", new Animate(_animationManager));
-            m_actionMap.Add("Choice", new Choice(_choiceManager));
+            m_actionMap.Add("Talk", new Talk(_dialogueController));
+            m_actionMap.Add("Animate", new Animate(_animationController));
+            m_actionMap.Add("Choice", new Choice(_choiceController));
         }
 
         public void Play()
@@ -59,7 +59,7 @@ namespace UniAvatar
                 var matchStep = int.Parse(arg3);
                 var unmatchStep = int.Parse(arg4);
 
-                var flagValue = _flagManager.Get(flag);
+                var flagValue = _flagController.Get(flag);
                 if (string.Equals(flagValue, matchValue))
                 {
                     m_actionPtr = matchStep - 1;

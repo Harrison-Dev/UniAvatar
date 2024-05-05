@@ -15,13 +15,13 @@ namespace UniAvatar
         public string Value;
     }
 
-    interface IFlagManager
+    interface IFlagController
     {
         void Set(string flagName, string value);
         string Get(string flagName);
     }
 
-    public class FlagManager : UniAvatarManagerBase, IFlagManager
+    public class FlagController : UAvatarControllerBase, IFlagController
     {
         public FlagSetting FlagSetting;
         public List<Flag> RuntimeFlags = new List<Flag>();

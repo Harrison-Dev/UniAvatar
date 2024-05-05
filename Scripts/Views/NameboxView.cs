@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 namespace UniAvatar
 {
-    public class NameboxHandler : MonoBehaviour
+    public class NameboxView : MonoBehaviour
     {
 
         [SerializeField]

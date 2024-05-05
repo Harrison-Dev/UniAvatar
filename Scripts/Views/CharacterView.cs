@@ -4,7 +4,7 @@ using LitMotion;
 
 namespace UniAvatar
 {
-    public class CharacterHandler : AnimationTargetBase, IFlip, IPan, ITint, IJump, ISpriteChange
+    public class CharacterView : AnimationTargetBase, IFlip, IPan, ITint, IJump, ISpriteChange
     {
         private Image m_targetImage;
         private MotionHandle? m_panTween;

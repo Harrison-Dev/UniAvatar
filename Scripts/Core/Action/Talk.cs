@@ -2,17 +2,17 @@
 {
     public class Talk : IAction
     {
-        private readonly DialogueManager _dialogueManager;
+        private readonly DialogueController _dialogueController;
 
-        public Talk(DialogueManager dialogueManager)
+        public Talk(DialogueController dialogueController)
         {
-            _dialogueManager = dialogueManager;
+            _dialogueController = dialogueController;
         }
 
         public void Execute(string nameKey, string contentKey,
                             string arg3, string arg4, string arg5, System.Action callback)
         {
-            _dialogueManager.Say(nameKey, contentKey);
+            _dialogueController.Say(nameKey, contentKey);
         }
     }
 }

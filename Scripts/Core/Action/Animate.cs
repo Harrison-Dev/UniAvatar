@@ -2,16 +2,16 @@
 {
     public class Animate : IAction
     {
-        private readonly AnimationManager _animationManager;
+        private readonly AnimationController _animationController;
 
-        public Animate(AnimationManager animationManager)
+        public Animate(AnimationController animationController)
         {
-            _animationManager = animationManager;
+            _animationController = animationController;
         }
 
         public void Execute(string target, string function, string arg3, string arg4, string arg5, System.Action callback)
         {
-            _animationManager.PlayAnim(target, function);
+            _animationController.PlayAnim(target, function);
         }
     }
 }

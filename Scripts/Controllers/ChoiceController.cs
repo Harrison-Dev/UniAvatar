@@ -2,11 +2,11 @@
 
 namespace UniAvatar
 {
-    public class ChoiceManager : UniAvatarManagerBase
+    public class ChoiceController : UAvatarControllerBase
     {
-        public ChoiceHandler Handler;
+        public ChoiceView Handler;
 
-        [Inject] private WordsManager _wordsManager;
+        [Inject] private WordsController _wordsController;
         [Inject] private IObjectResolver _context;
 
         private void Awake()
@@ -21,8 +21,8 @@ namespace UniAvatar
 
         public void ShowChoice(string Flag, string C1Key, string C2Key, string C1Value, string C2Value, System.Action callback)
         {
-            var choice1 = _wordsManager.GetWordByKey(C1Key);
-            var choice2 = _wordsManager.GetWordByKey(C2Key);
+            var choice1 = _wordsController.GetWordByKey(C1Key);
+            var choice2 = _wordsController.GetWordByKey(C2Key);
             Handler.ShowChoice(Flag, choice1, choice2, C1Value, C2Value, callback);
         }
     }

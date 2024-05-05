@@ -6,7 +6,7 @@ using VContainer;
 
 namespace UniAvatar
 {
-    public class DialogueManager : UniAvatarManagerBase
+    public class DialogueController : UAvatarControllerBase
     {
         [SerializeField]
         private TextTyper m_textController;
@@ -15,16 +15,16 @@ namespace UniAvatar
         private TypeTextComponent m_textControllerUGUI;
 
         [SerializeField]
-        private NameboxHandler m_nameBox;
+        private NameboxView m_nameBox;
 
         [Inject]
-        private AudioManager _audioManager;
+        private AudioController _audioController;
 
         [Inject]
-        private WordsManager _wordsManager;
+        private WordsController _wordsController;
 
         [Inject]
-        private AnimationManager _animationManager;
+        private AnimationController _animationController;
 
         private Queue<string> m_dialogueLines = new Queue<string>();
 
@@ -57,8 +57,8 @@ namespace UniAvatar
         private void Start()
         {
             GoNextWord();
-            m_textController?.CharacterPrinted.AsObservable().Subscribe(_ => _audioManager.PlaySE(m_printSound));
-            m_textControllerUGUI?.CharacterPrinted.AsObservable().Subscribe(_ => _audioManager.PlaySE(m_printSound));
+            m_textController?.CharacterPrinted.AsObservable().Subscribe(_ => _audioController.PlaySE(m_printSound));
+            m_textControllerUGUI?.CharacterPrinted.AsObservable().Subscribe(_ => _audioController.PlaySE(m_printSound));
         }
 
         private void Init()
@@ -91,8 +91,8 @@ namespace UniAvatar
         public void Say(string nameKey, string contentKey)
         {
             // Get content
-            string name = _wordsManager.GetWordByKey(nameKey);
-            string content = _wordsManager.GetWordByKey(contentKey);
+            string name = _wordsController.GetWordByKey(nameKey);
+            string content = _wordsController.GetWordByKey(contentKey);
 
             m_nameBox.SetName(name);
             m_textController?.TypeText(content);
@@ -100,22 +100,22 @@ namespace UniAvatar
 
             // TODO : make better approach
             // Say Animation (Temp)
-            // foreach (var nameInList in _gameStoryManager.m_nameList)
+            // foreach (var nameInList in _gameStoryController.m_nameList)
             // {
             //     if (string.Equals(nameInList, nameKey))
             //     {
-            //         _animationManager.InterruptAnim(nameInList, m_characterTalkingKey);
-            //         _animationManager.PlayAnim(nameInList, m_characterTalkingKey);
+            //         _animationController.InterruptAnim(nameInList, m_characterTalkingKey);
+            //         _animationController.PlayAnim(nameInList, m_characterTalkingKey);
             //     }
             //     else
             //     {
-            //         _animationManager.InterruptAnim(nameInList, m_characterTalkingKey);
-            //         _animationManager.PlayAnim(nameInList, m_characterPendingKey);
+            //         _animationController.InterruptAnim(nameInList, m_characterTalkingKey);
+            //         _animationController.PlayAnim(nameInList, m_characterPendingKey);
             //     }
             // }
 
-            _animationManager.InterruptAnim(nameKey, m_characterTalkingKey);
-            _animationManager.PlayAnim(nameKey, m_characterTalkingKey);
+            _animationController.InterruptAnim(nameKey, m_characterTalkingKey);
+            _animationController.PlayAnim(nameKey, m_characterTalkingKey);
         }
 
     }

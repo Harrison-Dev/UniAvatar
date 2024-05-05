@@ -2,17 +2,17 @@
 {
     public class Choice : IAction
     {
-        private readonly ChoiceManager _choiceManager;
+        private readonly ChoiceController _choiceController;
 
-        public Choice(ChoiceManager choiceManager)
+        public Choice(ChoiceController choiceController)
         {
-            _choiceManager = choiceManager;
+            _choiceController = choiceController;
         }
         
         public void Execute(string Flag, string C1Key,
                             string C2Key, string C1Value, string C2Value, System.Action callback)
         {
-            _choiceManager.ShowChoice(Flag, C1Key, C2Key, C1Value, C2Value, callback);
+            _choiceController.ShowChoice(Flag, C1Key, C2Key, C1Value, C2Value, callback);
         }
     }
 }

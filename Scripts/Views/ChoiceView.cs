@@ -3,10 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
 using VContainer;
+using UnityEngine.EventSystems;
 
 namespace UniAvatar
 {
-    public class ChoiceHandler : MonoBehaviour
+    public class ChoiceView : UIBehaviour
     {
         [SerializeField] private Animator m_choiceAnimator;
 
@@ -23,10 +24,11 @@ namespace UniAvatar
         private IDisposable m_sub1;
         private IDisposable m_sub2;
 
-        [Inject] private IFlagManager _flagManager;
+        [Inject] private IFlagController _flagController;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             Init();
         }
 
@@ -43,12 +45,12 @@ namespace UniAvatar
 
         public void ShowChoice(string flag, string c1Text, string c2Text, string c1Value, string c2Value, System.Action callback)
         {
- #if TMP_SUPPORT
+#if TMP_SUPPORT
             m_c1TMP.text = c1Text;
             m_c2TMP.text = c2Text;
 #else
             m_c1Text.text = c1Text;
-            m_c2Text.text = c2Text;;
+            m_c2Text.text = c2Text; ;
 #endif
 
             m_choiceAnimator.SetBool("Show", true);
@@ -58,7 +60,7 @@ namespace UniAvatar
                    .First()
                    .Subscribe(_ =>
                    {
-                       _flagManager.Set(flag, c1Value);
+                       _flagController.Set(flag, c1Value);
                        m_choiceAnimator.SetBool("Show", false);
                        m_sub1?.Dispose();
                        m_sub2?.Dispose();
@@ -71,7 +73,7 @@ namespace UniAvatar
                    .First()
                    .Subscribe(_ =>
                    {
-                       _flagManager.Set(flag, c2Value);
+                       _flagController.Set(flag, c2Value);
                        m_choiceAnimator.SetBool("Show", false);
                        m_sub1?.Dispose();
                        m_sub2?.Dispose();

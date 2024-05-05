@@ -17,7 +17,7 @@ namespace UniAvatar
         public AnimationTargetBase AnimateTarget;
     }
 
-    public class AnimationManager : UniAvatarManagerBase
+    public class AnimationController : UAvatarControllerBase
     {
         public AnimationTargetPair[] AnimationTargetSetting;
         public AnimationFunctionPair[] AnimationFunctionSetting;
