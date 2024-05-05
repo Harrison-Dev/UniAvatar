@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace UniAvatar
 {
-    public class WordsManager : MonoSingleton<WordsManager>
+    public class WordsManager : UniAvatarManagerBase
     {
         public WordSetting WordSetting;
 

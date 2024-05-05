@@ -1,8 +1,5 @@
-﻿using System;
-using System.Linq;
-using System.Collections;
+﻿using System.Linq;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace UniAvatar
 {
@@ -20,7 +17,7 @@ namespace UniAvatar
         public AnimationTargetBase AnimateTarget;
     }
 
-    public class AnimationManager : MonoSingleton<AnimationManager>
+    public class AnimationManager : UniAvatarManagerBase
     {
         public AnimationTargetPair[] AnimationTargetSetting;
         public AnimationFunctionPair[] AnimationFunctionSetting;

@@ -2,7 +2,7 @@
 
 namespace UniAvatar
 {
-    public class AudioManager : MonoSingleton<AudioManager>
+    public class AudioManager : UniAvatarManagerBase
     {
         [SerializeField] private AudioClip m_defaultBGM = null;
         private AudioSource m_soundEffectSource = null;

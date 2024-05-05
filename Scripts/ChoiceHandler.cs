@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
-using TMPro;
+using VContainer;
 
 namespace UniAvatar
 {
@@ -24,6 +22,8 @@ namespace UniAvatar
 #endif
         private IDisposable m_sub1;
         private IDisposable m_sub2;
+
+        [Inject] private IFlagManager _flagManager;
 
         private void Awake()
         {
@@ -58,7 +58,7 @@ namespace UniAvatar
                    .First()
                    .Subscribe(_ =>
                    {
-                       FlagManager.Instance.Set(flag, c1Value);
+                       _flagManager.Set(flag, c1Value);
                        m_choiceAnimator.SetBool("Show", false);
                        m_sub1?.Dispose();
                        m_sub2?.Dispose();
@@ -71,7 +71,7 @@ namespace UniAvatar
                    .First()
                    .Subscribe(_ =>
                    {
-                       FlagManager.Instance.Set(flag, c2Value);
+                       _flagManager.Set(flag, c2Value);
                        m_choiceAnimator.SetBool("Show", false);
                        m_sub1?.Dispose();
                        m_sub2?.Dispose();

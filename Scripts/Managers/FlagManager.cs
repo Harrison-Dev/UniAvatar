@@ -15,7 +15,13 @@ namespace UniAvatar
         public string Value;
     }
 
-    public class FlagManager : MonoSingleton<FlagManager>
+    interface IFlagManager
+    {
+        void Set(string flagName, string value);
+        string Get(string flagName);
+    }
+
+    public class FlagManager : UniAvatarManagerBase, IFlagManager
     {
         public FlagSetting FlagSetting;
         public List<Flag> RuntimeFlags = new List<Flag>();

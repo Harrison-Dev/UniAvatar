@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
+using VContainer;
 
 namespace UniAvatar
 {
-    public class InputManager : MonoSingleton<InputManager>
+    public class InputManager :UniAvatarManagerBase
     {
         [SerializeField]
         private Button m_interactionButton;
 
         [SerializeField]
         private KeyCode m_nextKey = KeyCode.Z;
+
+        [Inject] private DialogueManager _dialogueManager;
+        [Inject] private GameStoryManager _gameStoryManager;
 
         [Header("Playing setting")]
         [SerializeField] private float m_clickColddown = 0.5f;
@@ -36,14 +40,13 @@ namespace UniAvatar
 
         protected void HandleClick()
         {
-            var dialogue = DialogueManager.Instance;
-            if(dialogue.IsTyping)
+            if(_dialogueManager.IsTyping)
             {
-                dialogue.SkipCurrent();
+                _dialogueManager.SkipCurrent();
             }
             else
             {
-                GameStoryManager.Instance.Play();
+                _gameStoryManager.Play();
             }
         }
     }

@@ -1,19 +1,19 @@
-﻿using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using VContainer;
 
 namespace UniAvatar
 {
-    public class GameStoryManager : MonoSingleton<GameStoryManager>
+    public class GameStoryManager : UniAvatarManagerBase
     {
-
         public ActionSetting ActionSetting;
-
         private Dictionary<string, IAction> m_actionMap = new Dictionary<string, IAction>();
         [SerializeField] [ReadOnly] private int m_actionPtr = 1;
 
-        public HashSet<string> m_nameList = new HashSet<string>();
+        [Inject] private IFlagManager _flagManager;
+        [Inject] private DialogueManager _dialogueManager;
+        [Inject] private AnimationManager _animationManager;
+        [Inject] private ChoiceManager _choiceManager;
 
         private void Awake()
         {
@@ -27,17 +27,9 @@ namespace UniAvatar
 
         private void Init()
         {
-            m_actionMap.Add("Talk", new Talk());
-            m_actionMap.Add("Animate", new Animate());
-            m_actionMap.Add("Choice", new Choice());
-
-            foreach (var action in ActionSetting.ActionDatas)
-            {
-                if (action.Type == "Talk")
-                {
-                    m_nameList.Add(action.Arg1);
-                }
-            }
+            m_actionMap.Add("Talk", new Talk(_dialogueManager));
+            m_actionMap.Add("Animate", new Animate(_animationManager));
+            m_actionMap.Add("Choice", new Choice(_choiceManager));
         }
 
         public void Play()
@@ -67,7 +59,7 @@ namespace UniAvatar
                 var matchStep = int.Parse(arg3);
                 var unmatchStep = int.Parse(arg4);
 
-                var flagValue = FlagManager.Instance.Get(flag);
+                var flagValue = _flagManager.Get(flag);
                 if (string.Equals(flagValue, matchValue))
                 {
                     m_actionPtr = matchStep - 1;

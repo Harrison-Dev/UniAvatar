@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace UniAvatar
+﻿namespace UniAvatar
 {
     public class Talk : IAction
     {
+        private readonly DialogueManager _dialogueManager;
+
+        public Talk(DialogueManager dialogueManager)
+        {
+            _dialogueManager = dialogueManager;
+        }
+
         public void Execute(string nameKey, string contentKey,
                             string arg3, string arg4, string arg5, System.Action callback)
         {
-            // Send to Dialogue Manager
-            DialogueManager.Instance.Say(nameKey, contentKey);
+            _dialogueManager.Say(nameKey, contentKey);
         }
     }
 }

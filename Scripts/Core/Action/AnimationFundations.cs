@@ -1,4 +1,5 @@
 using UnityEngine;
+
 namespace UniAvatar
 {
     public abstract class AnimationTargetBase : MonoBehaviour
