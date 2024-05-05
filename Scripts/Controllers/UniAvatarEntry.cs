@@ -20,7 +20,7 @@ namespace UniAvatar
         [SerializeField] private DialogueController m_dialogueController;
         [SerializeField] private FlagController m_flagController;
         [SerializeField] private InputController m_inputController;
-        [SerializeField] private GameStoryController m_gameStoryController;
+        [SerializeField] private StoryController m_gameStoryController;
         [SerializeField] private WordsController m_wordsController;
         
 

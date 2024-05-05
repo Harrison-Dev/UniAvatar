@@ -4,7 +4,7 @@ using VContainer;
 
 namespace UniAvatar
 {
-    public class GameStoryController : UAvatarControllerBase
+    public class StoryController : UAvatarControllerBase
     {
         public ActionSetting ActionSetting;
         private Dictionary<string, IAction> m_actionMap = new Dictionary<string, IAction>();

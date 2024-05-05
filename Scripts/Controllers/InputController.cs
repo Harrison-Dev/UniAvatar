@@ -16,7 +16,7 @@ namespace UniAvatar
         private KeyCode m_nextKey = KeyCode.Z;
 
         [Inject] private DialogueController _dialogueController;
-        [Inject] private GameStoryController _gameStoryController;
+        [Inject] private StoryController _gameStoryController;
 
         [Header("Playing setting")]
         [SerializeField] private float m_clickColddown = 0.5f;
