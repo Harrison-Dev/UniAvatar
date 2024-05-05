@@ -36,7 +36,6 @@ namespace UniAvatar
             m_animationFunctionMap = AnimationFunctionSetting.ToDictionary(key => key.Key, value => value.AnimationFunction);
         }
 
-        // TODO : interrput
         public void PlayAnim(string targetKey, string functionKey)
         {
             var target = m_animationTargetMap[targetKey];
