@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
-namespace Utopia
+namespace UniAvatar.Utils
 {
     public static class CSVReader
     {

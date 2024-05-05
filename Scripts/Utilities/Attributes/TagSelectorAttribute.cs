@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Utopia.Utilities
+namespace UniAvatar.Utils.Utilities
 {
     public class TagSelectorAttribute : PropertyAttribute
     {

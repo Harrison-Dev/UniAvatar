@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Utopia;
+using UniAvatar.Utils;
 using TMPro;
 
 namespace UniAvatar

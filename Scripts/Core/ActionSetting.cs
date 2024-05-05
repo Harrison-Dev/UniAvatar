@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Utopia;
+using UniAvatar.Utils;
 using UnityEngine;
 
 namespace UniAvatar

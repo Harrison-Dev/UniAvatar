@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
-using Utopia.Utilities;
+using UniAvatar.Utils.Utilities;
 
-namespace Utopia
+namespace UniAvatar.Utils
 {
     [CustomPropertyDrawer(typeof(TagSelectorAttribute))]
     public class TagSelectorPropertyDrawer : PropertyDrawer
